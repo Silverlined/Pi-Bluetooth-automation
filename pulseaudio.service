@@ -1,0 +1,11 @@
+[Unit]
+Description=Pulse Audio
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/sudo /usr/bin/pulseaudio --start --disallow-exit --exit-idle-time=-1
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=pulseaudio.service

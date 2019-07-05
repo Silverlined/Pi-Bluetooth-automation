@@ -1,0 +1,12 @@
+[Unit]
+Description=Connect Headphones
+After=pulseaudio.service
+
+[Service]
+Type=forking
+ExecStart=/home/pi/scripts/script.exp
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=connection.service
